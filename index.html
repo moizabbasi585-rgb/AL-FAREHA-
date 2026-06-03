@@ -1,634 +1,1480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>AL Fareha Educational High School</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beacon Academy — Karachi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --green: #1a5c38;
-  --green-light: #2a7a4e;
-  --green-pale: #eaf4ee;
-  --gold: #c49a2a;
-  --gold-light: #e8bf5a;
-  --gold-pale: #fdf6e3;
+  --navy: #0a1628;
+  --navy2: #122040;
+  --gold: #c9a84c;
+  --gold2: #e8c46a;
+  --cream: #faf7f2;
+  --cream2: #f2ede4;
   --white: #ffffff;
-  --off-white: #f8f9f5;
-  --text: #1a1a1a;
-  --text-muted: #5a5a5a;
-  --border: #d8e8dd;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --accent: #1e4d8c;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--green);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;box-shadow:0 2px 12px rgba(0,0,0,.18);}
-.nav-logo{display:flex;align-items:center;gap:12px;}
-.nav-logo-emblem{width:40px;height:40px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--green);font-size:16px;flex-shrink:0;}
-.nav-logo-text{font-family:'Playfair Display',serif;color:var(--white);font-size:14px;font-weight:600;line-height:1.25;}
-.nav-logo-text span{display:block;font-size:10px;font-weight:400;color:var(--gold-light);letter-spacing:.06em;}
-.nav-links{display:flex;gap:4px;}
-.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all .2s;}
-.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.12);}
-.nav-cta{background:var(--gold);color:var(--green)!important;font-weight:500;border-radius:6px;padding:7px 16px!important;}
-.nav-cta:hover{background:var(--gold-light)!important;color:var(--green)!important;}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
 
-/* HERO */
-.hero{background:var(--green);position:relative;overflow:hidden;padding:80px 40px 90px;}
-.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(196,154,42,.18) 0%,transparent 70%);border-radius:50%;}
-.hero::after{content:'';position:absolute;left:40%;bottom:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);border-radius:50%;}
-.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:60px;align-items:center;}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(196,154,42,.2);border:1px solid rgba(196,154,42,.4);color:var(--gold-light);font-size:12px;padding:5px 12px;border-radius:20px;margin-bottom:20px;}
-.hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:#fff;line-height:1.18;margin-bottom:16px;}
-.hero h1 em{font-style:normal;color:var(--gold-light);}
-.hero-sub{color:rgba(255,255,255,.75);font-size:16px;line-height:1.7;margin-bottom:32px;max-width:460px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--green);padding:13px 28px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;}
-.btn-primary:hover{background:var(--gold-light);}
-.btn-outline{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:all .2s;}
-.btn-outline:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);}
-.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px;backdrop-filter:blur(4px);}
-.hero-card h3{font-family:'Playfair Display',serif;color:#fff;font-size:17px;margin-bottom:16px;}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.stat{background:rgba(255,255,255,.06);border-radius:10px;padding:16px;text-align:center;}
-.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold-light);}
-.stat-label{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;}
-.hero-notice{margin-top:16px;background:rgba(196,154,42,.15);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 14px;}
-.hero-notice p{font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;}
-.hero-notice strong{color:var(--gold-light);}
+/* Custom cursor */
+.cursor {
+  position: fixed;
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+  mix-blend-mode: multiply;
+}
+.cursor-ring {
+  position: fixed;
+  width: 40px; height: 40px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s, opacity 0.3s;
+  opacity: 0.6;
+}
 
-/* TICKER */
-.ticker{background:var(--gold);padding:9px 0;overflow:hidden;white-space:nowrap;}
-.ticker-inner{display:inline-flex;gap:0;animation:tick 28s linear infinite;}
-.ticker-inner span{padding:0 40px;font-size:13px;font-weight:500;color:var(--green);}
-.ticker-inner span::after{content:'✦';margin-left:40px;opacity:.5;}
-@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* ===== LOADER ===== */
+#loader {
+  position: fixed; inset: 0;
+  background: var(--navy);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: var(--white);
+  letter-spacing: 0.12em;
+  font-weight: 300;
+  overflow: hidden;
+}
+.loader-text span {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.loader-bar {
+  width: 200px; height: 1px;
+  background: rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.loader-bar::after {
+  content: '';
+  position: absolute;
+  left: -100%; top: 0;
+  width: 100%; height: 100%;
+  background: var(--gold);
+  animation: barFill 1.8s ease forwards;
+}
+@keyframes slideUp { to { transform: translateY(0); } }
+@keyframes barFill { to { left: 0; } }
 
-/* SECTION BASE */
-section{padding:70px 40px;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section-tag{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.section-title{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:var(--green);margin-bottom:12px;line-height:1.2;}
-.section-sub{color:var(--text-muted);font-size:15px;line-height:1.7;max-width:560px;margin-bottom:40px;}
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(10,22,40,0.96);
+  backdrop-filter: blur(20px);
+  padding: 14px 60px;
+  box-shadow: 0 1px 0 rgba(201,168,76,0.15);
+}
+.logo {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none;
+}
+.logo-emblem {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--gold);
+  font-weight: 600;
+  position: relative;
+}
+.logo-emblem::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 0.5px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+}
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.logo-text span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex; gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  padding: 10px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+.nav-cta:hover { background: var(--gold); color: var(--navy); }
 
-/* ABOUT */
-.about-bg{background:var(--off-white);}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.about-features{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
-.about-feature{display:flex;gap:14px;align-items:flex-start;}
-.about-feature-icon{width:40px;height:40px;background:var(--green-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
-.about-feature-text h4{font-size:14px;font-weight:500;color:var(--green);margin-bottom:3px;}
-.about-feature-text p{font-size:13px;color:var(--text-muted);line-height:1.6;}
-.principal-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;}
-.principal-avatar{width:72px;height:72px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:24px;color:#fff;margin-bottom:16px;}
-.principal-card blockquote{font-family:'Playfair Display',serif;font-size:15px;color:var(--text);line-height:1.7;font-style:italic;border-left:3px solid var(--gold);padding-left:16px;margin:12px 0;}
-.principal-card cite{font-size:13px;color:var(--text-muted);}
+/* ===== HERO ===== */
+.hero {
+  height: 100vh; min-height: 700px;
+  background: var(--navy);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(30,77,140,0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridDrift 20s linear infinite;
+}
+@keyframes gridDrift { to { transform: translateY(80px); } }
+.hero-content {
+  position: relative;
+  padding: 0 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 2s forwards;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 40px; height: 1px;
+  background: var(--gold);
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7vw, 96px);
+  color: var(--white);
+  line-height: 1.0;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s 2.2s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-title .line2 {
+  padding-left: clamp(40px, 8vw, 120px);
+  display: block;
+}
+.hero-sub {
+  margin-top: 28px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  max-width: 480px;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 2.6s forwards;
+}
+.hero-actions {
+  margin-top: 48px;
+  display: flex; gap: 20px; align-items: center;
+  opacity: 0;
+  animation: fadeUp 0.8s 2.9s forwards;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 36px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.15);
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+}
+.btn-primary:hover::after { transform: translateX(0); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,168,76,0.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+}
+.btn-secondary:hover { color: var(--white); }
+.btn-secondary .arrow {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.btn-secondary:hover .arrow { border-color: rgba(255,255,255,0.6); transform: translateX(4px); }
+.hero-stats {
+  position: absolute;
+  bottom: 60px; right: 60px;
+  display: flex; gap: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s 3.2s forwards;
+}
+.stat {
+  text-align: right;
+  border-right: 1px solid rgba(201,168,76,0.2);
+  padding-right: 24px;
+}
+.stat:last-child { border: none; padding: 0; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: var(--white);
+  font-weight: 300;
+  line-height: 1;
+}
+.stat-num span { color: var(--gold); }
+.stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px; left: 60px;
+  display: flex; align-items: center; gap: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s 3.5s forwards;
+}
+.scroll-line {
+  width: 1px; height: 60px;
+  background: rgba(255,255,255,0.15);
+  position: relative; overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: var(--gold);
+  animation: scrollAnim 2s 4s ease infinite;
+}
+@keyframes scrollAnim { 0% { top: -100%; } 100% { top: 100%; } }
+.scroll-text {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  writing-mode: vertical-rl;
+}
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-/* ACADEMICS */
-.academics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.academic-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;}
-.academic-card:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(26,92,56,.08);}
-.ac-level{display:inline-block;background:var(--green-pale);color:var(--green);font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;margin-bottom:12px;}
-.academic-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--green);margin-bottom:8px;}
-.academic-card p{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:14px;}
-.subject-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.subject-tag{font-size:11px;background:var(--gold-pale);color:#7a5a10;border-radius:20px;padding:3px 10px;}
+.hero-shape {
+  position: absolute;
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 50%;
+  animation: floatShape 6s ease-in-out infinite;
+}
+.shape1 { width: 300px; height: 300px; right: 15%; top: 20%; animation-delay: 0s; }
+.shape2 { width: 500px; height: 500px; right: 8%; top: 10%; animation-delay: -2s; animation-duration: 8s; }
+.shape3 { width: 150px; height: 150px; right: 25%; top: 40%; animation-delay: -4s; animation-duration: 5s; }
+@keyframes floatShape {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(8deg); }
+}
 
-/* ADMISSIONS */
-.admissions-bg{background:var(--green-pale);}
-.admission-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px;}
-.step{background:var(--white);border-radius:14px;padding:24px;text-align:center;border:1px solid var(--border);position:relative;}
-.step-num{width:36px;height:36px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;margin:0 auto 14px;}
-.step h4{font-size:14px;font-weight:500;color:var(--green);margin-bottom:6px;}
-.step p{font-size:12px;color:var(--text-muted);line-height:1.6;}
-.fee-table{background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--border);}
-.fee-table table{width:100%;border-collapse:collapse;}
-.fee-table th{background:var(--green);color:#fff;padding:12px 20px;font-size:13px;font-weight:500;text-align:left;}
-.fee-table td{padding:11px 20px;font-size:13px;border-bottom:1px solid var(--border);color:var(--text);}
-.fee-table tr:last-child td{border-bottom:none;}
-.fee-table tr:nth-child(even) td{background:var(--off-white);}
-.fee-amount{font-weight:500;color:var(--green);}
+/* ===== MARQUEE ===== */
+.marquee-wrap {
+  background: var(--gold);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-track {
+  display: inline-block;
+  animation: marqueeScroll 25s linear infinite;
+}
+.marquee-track span {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  padding: 0 40px;
+}
+.marquee-track .dot { color: rgba(10,22,40,0.4); padding: 0; }
+@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* RESULTS */
-.results-bg{background:var(--green);}
-.results-bg .section-tag{color:var(--gold-light);}
-.results-bg .section-title{color:#fff;}
-.results-bg .section-sub{color:rgba(255,255,255,.7);}
-.toppers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.topper-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;text-align:center;}
-.topper-rank{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;margin:0 auto 12px;}
-.rank-1{background:var(--gold);color:var(--green);}
-.rank-2{background:#c0c0c0;color:#333;}
-.rank-3{background:#cd7f32;color:#fff;}
-.rank-other{background:rgba(255,255,255,.15);color:#fff;}
-.topper-avatar{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin:0 auto 10px;}
-.topper-name{font-weight:500;color:#fff;font-size:14px;margin-bottom:2px;}
-.topper-marks{color:var(--gold-light);font-size:13px;}
-.topper-class{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;}
+/* ===== ABOUT ===== */
+.about {
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 60px;
+}
+.about-visual { position: relative; }
+.about-img-frame {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.about-img-frame::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(201,168,76,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(30,77,140,0.6) 0%, transparent 60%);
+}
+.about-img-frame::after {
+  content: 'SINCE\A1985';
+  white-space: pre;
+  position: absolute;
+  bottom: 30px; right: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.6;
+}
+.about-pattern {
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 120px; height: 120px;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
+}
+.about-accent {
+  position: absolute;
+  bottom: -30px; left: -30px;
+  width: 180px; height: 4px;
+  background: var(--gold);
+}
+.about-illustration {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 20px; padding: 40px;
+}
+.illus-building { width: 100%; max-width: 240px; }
+.about-body {
+  margin-top: 28px;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.85;
+  font-weight: 300;
+}
+.about-pillars {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.pillar {
+  padding: 20px;
+  border: 1px solid var(--cream2);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.pillar::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.4s;
+}
+.pillar:hover { border-color: rgba(201,168,76,0.3); }
+.pillar:hover::before { width: 100%; }
+.pillar-icon { font-size: 24px; margin-bottom: 10px; }
+.pillar-name { font-size: 13px; font-weight: 500; color: var(--navy); letter-spacing: 0.05em; }
+.pillar-desc { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
-/* GALLERY */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:var(--green-pale);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;}
-.gallery-item:first-child{grid-column:span 2;aspect-ratio:16/7;}
-.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
-.gallery-icon{font-size:32px;opacity:.3;}
-.gallery-label{font-size:12px;color:var(--text-muted);}
-.gallery-overlay{position:absolute;inset:0;background:rgba(26,92,56,.7);opacity:0;display:flex;align-items:center;justify-content:center;transition:opacity .2s;color:#fff;font-size:13px;}
-.gallery-item:hover .gallery-overlay{opacity:1;}
-/* gallery colors */
-.gi-1{background:linear-gradient(135deg,#d4e8db,#a8d4b8);}
-.gi-2{background:linear-gradient(135deg,#fdf0c8,#f0d888);}
-.gi-3{background:linear-gradient(135deg,#dce8f0,#b0d0e8);}
-.gi-4{background:linear-gradient(135deg,#f0dce8,#e0b0c8);}
-.gi-5{background:linear-gradient(135deg,#e8e0d4,#d0c0a8);}
+/* ===== PROGRAMS ===== */
+.programs { background: var(--navy); padding: 120px 60px; }
+.programs-inner { max-width: 1300px; margin: 0 auto; }
+.programs-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 64px;
+}
+.programs-view-all {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  padding-bottom: 4px;
+  transition: gap 0.3s;
+}
+.programs-view-all:hover { gap: 14px; }
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.program-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.4s;
+}
+.program-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.program-card:hover::before { opacity: 1; }
+.program-card:hover { background: rgba(255,255,255,0.05); }
+.program-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  color: rgba(255,255,255,0.04);
+  font-weight: 700;
+  position: absolute;
+  top: 20px; right: 24px;
+  line-height: 1;
+  transition: color 0.4s;
+}
+.program-card:hover .program-num { color: rgba(201,168,76,0.08); }
+.program-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.program-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.program-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.program-footer {
+  margin-top: 32px;
+  display: flex; align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.3);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.program-footer::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: rgba(201,168,76,0.4);
+}
 
-/* CONTACT */
-.contact-bg{background:var(--off-white);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
-.contact-info{display:flex;flex-direction:column;gap:20px;}
-.contact-item{display:flex;gap:14px;align-items:flex-start;}
-.contact-item-icon{width:44px;height:44px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.contact-item h4{font-size:14px;font-weight:500;color:var(--green);margin-bottom:3px;}
-.contact-item p{font-size:13px;color:var(--text-muted);line-height:1.6;}
-.contact-map{background:var(--green-pale);border-radius:14px;overflow:hidden;margin-top:8px;height:160px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);}
-.contact-map p{font-size:13px;color:var(--text-muted);}
-.contact-form{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;}
-.contact-form h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--green);margin-bottom:20px;}
-.form-group{margin-bottom:14px;}
-.form-group label{display:block;font-size:13px;font-weight:500;color:var(--text);margin-bottom:5px;}
-.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);outline:none;transition:border .2s;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);}
-.form-group textarea{resize:vertical;min-height:90px;}
-.form-submit{width:100%;background:var(--green);color:#fff;border:none;border-radius:8px;padding:12px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s;}
-.form-submit:hover{background:var(--green-light);}
-.form-success{display:none;background:var(--green-pale);border:1px solid var(--green);border-radius:8px;padding:12px;font-size:13px;color:var(--green);text-align:center;margin-top:10px;}
+/* ===== FEATURES ===== */
+.features { background: var(--cream); padding: 120px 60px; }
+.features-inner { max-width: 1300px; margin: 0 auto; }
+.features-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 80px;
+}
+.features-list { display: flex; flex-direction: column; gap: 0; }
+.feature-item {
+  display: flex; gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--cream2);
+  cursor: pointer;
+}
+.feature-item:first-child { border-top: 1px solid var(--cream2); }
+.feature-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: var(--gold);
+  padding-top: 4px;
+  min-width: 28px;
+}
+.feature-content { flex: 1; }
+.feature-title { font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 8px; transition: color 0.3s; }
+.feature-item:hover .feature-title { color: var(--accent); }
+.feature-text { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.feature-arrow { font-size: 18px; color: rgba(10,22,40,0.15); align-self: center; transition: color 0.3s, transform 0.3s; }
+.feature-item:hover .feature-arrow { color: var(--gold); transform: translateX(4px); }
+.features-visual { position: sticky; top: 100px; }
+.features-card {
+  background: var(--navy);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.features-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(30,77,140,0.5) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(201,168,76,0.1) 0%, transparent 40%);
+}
+.fc-quote {
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.fc-quote::before {
+  content: '"';
+  font-size: 80px;
+  color: rgba(201,168,76,0.15);
+  position: absolute;
+  top: -20px; left: -10px;
+  line-height: 1;
+  font-family: 'Cormorant Garamond', serif;
+}
+.fc-author { position: relative; display: flex; align-items: center; gap: 14px; }
+.fc-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--gold);
+}
+.fc-info { font-size: 13px; color: rgba(255,255,255,0.5); }
+.fc-info strong { display: block; color: rgba(255,255,255,0.8); font-weight: 400; }
+.fc-dots { position: absolute; top: 32px; right: 32px; display: flex; gap: 6px; }
+.fc-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(201,168,76,0.2); transition: background 0.3s; }
+.fc-dot.active { background: var(--gold); }
 
-/* FOOTER */
-footer{background:#0f3622;padding:40px 40px 20px;}
-.footer-inner{max-width:1100px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;}
-.footer-brand h3{font-family:'Playfair Display',serif;color:#fff;font-size:18px;margin-bottom:8px;}
-.footer-brand p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;}
-.footer-col h4{font-size:13px;font-weight:500;color:var(--gold-light);margin-bottom:12px;letter-spacing:.04em;}
-.footer-col ul{list-style:none;}
-.footer-col ul li{margin-bottom:7px;}
-.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}
-.footer-col ul li a:hover{color:rgba(255,255,255,.85);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;display:flex;justify-content:space-between;align-items:center;}
-.footer-bottom p{font-size:12px;color:rgba(255,255,255,.35);}
-.wa-btn{position:fixed;bottom:28px;right:28px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:24px;box-shadow:0 4px 16px rgba(0,0,0,.2);z-index:200;transition:transform .2s;}
-.wa-btn:hover{transform:scale(1.08);}
+/* ===== SECTION LABELS ===== */
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.1;
+  font-weight: 300;
+  color: var(--navy);
+}
+.section-title em { font-style: italic; color: var(--accent); }
 
-/* PAGE SECTIONS TOGGLE */
-.page{display:none;}
-.page.active{display:block;}
+/* ===== GALLERY ===== */
+.gallery { background: var(--white); padding: 120px 0; }
+.gallery-inner { padding: 0 60px; }
+.gallery-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 240px 240px;
+  gap: 4px;
+}
+.g-item { overflow: hidden; position: relative; cursor: pointer; }
+.g-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.g-item:nth-child(4) { grid-column: span 2; }
+.g-fill {
+  width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  display: flex; align-items: center; justify-content: center;
+}
+.g-item:hover .g-fill { transform: scale(1.06); }
+.g-fill-1 { background: linear-gradient(135deg, #1a3a6b 0%, #0a1628 100%); }
+.g-fill-2 { background: linear-gradient(135deg, #c9a84c 0%, #8b6914 100%); }
+.g-fill-3 { background: linear-gradient(135deg, #1e4d8c 0%, #0d2a50 100%); }
+.g-fill-4 { background: linear-gradient(135deg, #2d5a3d 0%, #1a3326 100%); }
+.g-fill-5 { background: linear-gradient(135deg, #6b1a3d 0%, #3d0f23 100%); }
+.g-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.g-item:hover .g-label { transform: translateY(0); }
+.g-icon { font-size: 48px; opacity: 0.15; }
 
-/* CALENDAR */
-.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.cal-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.cal-month{background:var(--green);color:#fff;padding:12px 18px;font-weight:500;font-size:14px;}
-.cal-events{padding:14px 18px;display:flex;flex-direction:column;gap:10px;}
-.cal-event{display:flex;gap:12px;align-items:flex-start;}
-.cal-date{font-size:11px;font-weight:500;color:var(--gold);width:44px;flex-shrink:0;}
-.cal-event p{font-size:12px;color:var(--text-muted);}
+/* ===== TESTIMONIALS ===== */
+.testimonials { background: var(--cream); padding: 120px 60px; overflow: hidden; }
+.testimonials-inner { max-width: 1300px; margin: 0 auto; }
+.testimonials-track {
+  display: flex;
+  gap: 24px;
+  margin-top: 64px;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.tcard {
+  min-width: 380px;
+  background: var(--white);
+  padding: 40px;
+  border: 1px solid var(--cream2);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.tcard::after {
+  content: '"';
+  position: absolute;
+  top: 20px; right: 24px;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: rgba(201,168,76,0.08);
+  line-height: 1;
+}
+.tcard:hover { border-color: rgba(201,168,76,0.3); }
+.tcard-text { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; font-style: italic; margin-bottom: 28px; }
+.tcard-person { display: flex; align-items: center; gap: 14px; }
+.tcard-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--white);
+}
+.av1 { background: var(--navy); }
+.av2 { background: var(--accent); }
+.av3 { background: #2d5a3d; }
+.av4 { background: #6b1a3d; }
+.av5 { background: #8b6914; }
+.tcard-name { font-size: 14px; font-weight: 500; color: var(--navy); }
+.tcard-role { font-size: 12px; color: var(--muted); }
+.testimonials-controls { margin-top: 40px; display: flex; gap: 12px; }
+.tc-btn {
+  width: 48px; height: 48px;
+  border: 1px solid var(--cream2);
+  background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--navy);
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.tc-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
-/* FACULTY */
-.faculty-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.faculty-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;}
-.faculty-avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin:0 auto 12px;}
-.faculty-card h4{font-size:14px;font-weight:500;color:var(--green);margin-bottom:2px;}
-.faculty-card p{font-size:12px;color:var(--text-muted);}
-.faculty-subject{display:inline-block;background:var(--gold-pale);color:#7a5a10;font-size:11px;border-radius:20px;padding:3px 10px;margin-top:8px;}
+/* ===== ADMISSIONS ===== */
+.admissions { background: var(--navy); padding: 120px 60px; position: relative; overflow: hidden; }
+.admissions::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 50%, rgba(30,77,140,0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 50%, rgba(201,168,76,0.06) 0%, transparent 50%);
+}
+.admissions-inner {
+  max-width: 1300px; margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.admissions .section-title { color: var(--white); }
+.adm-body { margin-top: 24px; font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; }
+.adm-steps { display: flex; flex-direction: column; gap: 20px; }
+.adm-step {
+  display: flex; gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  transition: border-color 0.3s, background 0.3s;
+}
+.adm-step:hover { border-color: rgba(201,168,76,0.2); background: rgba(201,168,76,0.03); }
+.adm-step-num {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.adm-step-title { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 4px; }
+.adm-step-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
-/* RESULT CHECKER SECTION */
-.result-checker{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:540px;margin:0 auto;}
-.result-checker h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--green);margin-bottom:20px;text-align:center;}
-.result-output{margin-top:20px;display:none;}
-.result-output.show{display:block;}
-.result-card-out{background:var(--green-pale);border:1px solid var(--border);border-radius:12px;padding:20px;}
-.result-card-out h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--green);margin-bottom:14px;}
-.result-row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
-.result-row:last-child{border-bottom:none;}
-.result-total{background:var(--green);color:#fff;border-radius:8px;padding:12px 16px;display:flex;justify-content:space-between;margin-top:12px;font-weight:500;}
+/* ===== FOOTER ===== */
+footer { background: #060e1d; padding: 80px 60px 40px; }
+.footer-inner { max-width: 1300px; margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand .logo-text { color: var(--white); font-size: 22px; }
+.footer-tagline { margin-top: 16px; font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; font-weight: 300; max-width: 280px; }
+.footer-social { margin-top: 28px; display: flex; gap: 12px; }
+.social-btn {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  font-size: 14px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.social-btn:hover { border-color: var(--gold); color: var(--gold); }
+.footer-col h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 20px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { text-decoration: none; color: rgba(255,255,255,0.4); font-size: 14px; transition: color 0.3s; font-weight: 300; }
+.footer-col a:hover { color: rgba(255,255,255,0.8); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-wa {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 24px;
+  background: rgba(37,211,102,0.1);
+  border: 1px solid rgba(37,211,102,0.2);
+  color: #25d366;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+.footer-wa:hover { background: rgba(37,211,102,0.15); }
 
-/* animations */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero-inner > *{animation:fadeUp .7s ease both;}
-.hero-inner > *:nth-child(2){animation-delay:.15s;}
+/* ===== SCROLL REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* WhatsApp float */
+.wa-float {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 56px; height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+  z-index: 400;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  animation: waPulse 2s ease infinite;
+  transition: transform 0.3s;
+}
+.wa-float:hover { transform: scale(1.1); }
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 40px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.08); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  nav.scrolled { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 24px; }
+  .hero-stats { right: 24px; bottom: 40px; gap: 24px; }
+  .scroll-indicator { left: 24px; }
+  .about { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
+  .programs { padding: 80px 24px; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .programs-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .features { padding: 80px 24px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .gallery-inner { padding: 0 24px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-item:nth-child(1) { grid-column: span 2; }
+  .g-item:nth-child(4) { grid-column: span 1; }
+  .testimonials { padding: 80px 24px; }
+  .admissions { padding: 80px 24px; }
+  .admissions-inner { grid-template-columns: 1fr; gap: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; padding: 0 0 40px; }
+  footer { padding: 60px 24px 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
 </style>
 </head>
 <body>
 
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/92300000000" class="wa-float" title="Chat on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-text">
+    <span style="animation-delay:0.1s">B</span><span style="animation-delay:0.15s">e</span><span style="animation-delay:0.2s">a</span><span style="animation-delay:0.25s">c</span><span style="animation-delay:0.3s">o</span><span style="animation-delay:0.35s">n</span><span style="animation-delay:0.4s">&nbsp;</span><span style="animation-delay:0.45s">A</span><span style="animation-delay:0.5s">c</span><span style="animation-delay:0.55s">a</span><span style="animation-delay:0.6s">d</span><span style="animation-delay:0.65s">e</span><span style="animation-delay:0.7s">m</span><span style="animation-delay:0.75s">y</span>
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <div class="nav-logo-emblem">AF</div>
-    <div class="nav-logo-text">AL Fareha Educational High School<span>Karachi, Pakistan · Est. 2003</span></div>
-  </div>
-  <div class="nav-links">
-    <a href="#" class="active" onclick="showPage('home',this)">Home</a>
-    <a href="#" onclick="showPage('about',this)">About</a>
-    <a href="#" onclick="showPage('academics',this)">Academics</a>
-    <a href="#" onclick="showPage('admissions',this)">Admissions</a>
-    <a href="#" onclick="showPage('faculty',this)">Faculty</a>
-    <a href="#" onclick="showPage('results',this)">Results</a>
-    <a href="#" onclick="showPage('gallery',this)">Gallery</a>
-    <a href="#" onclick="showPage('contact',this)" class="nav-cta">Contact Us</a>
-  </div>
+<nav id="navbar">
+  <a href="#" class="logo">
+    <div class="logo-emblem">B</div>
+    <div class="logo-text">Beacon Academy
+      <span>Karachi · Est. 1985</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#gallery">Campus</a></li>
+    <li><a href="#testimonials">Community</a></li>
+    <li><a href="#admissions">Admissions</a></li>
+  </ul>
+  <a href="#admissions" class="nav-cta">Apply Now</a>
 </nav>
 
-<!-- HOME PAGE -->
-<div id="page-home" class="page active">
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-inner">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-shape shape1"></div>
+  <div class="hero-shape shape2"></div>
+  <div class="hero-shape shape3"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Karachi's Premier Institution</div>
+    <h1 class="hero-title">
+      Where <em>Brilliance</em>
+      <span class="line2">Finds Its Voice</span>
+    </h1>
+    <p class="hero-sub">A legacy of academic excellence, character formation, and global readiness — shaping Karachi's next generation since 1985.</p>
+    <div class="hero-actions">
+      <a href="#admissions" class="btn-primary">
+        Begin Admissions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#about" class="btn-secondary">
+        <span class="arrow">→</span>
+        Explore School
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num"><span class="counting" data-target="2400">0</span><span>+</span></div>
+      <div class="stat-label">Students</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="counting" data-target="98">0</span><span>%</span></div>
+      <div class="stat-label">Pass Rate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="counting" data-target="40">0</span><span>+</span></div>
+      <div class="stat-label">Years Legacy</div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <div class="scroll-text">Scroll</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Excellence in Education</span><span class="dot">·</span>
+    <span>Karachi's Finest</span><span class="dot">·</span>
+    <span>O-Levels & Matric</span><span class="dot">·</span>
+    <span>Award-Winning Faculty</span><span class="dot">·</span>
+    <span>Sports & Arts</span><span class="dot">·</span>
+    <span>Character Development</span><span class="dot">·</span>
+    <span>Digital Learning</span><span class="dot">·</span>
+    <span>Excellence in Education</span><span class="dot">·</span>
+    <span>Karachi's Finest</span><span class="dot">·</span>
+    <span>O-Levels & Matric</span><span class="dot">·</span>
+    <span>Award-Winning Faculty</span><span class="dot">·</span>
+    <span>Sports & Arts</span><span class="dot">·</span>
+    <span>Character Development</span><span class="dot">·</span>
+    <span>Digital Learning</span><span class="dot">·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="about reveal" id="about">
+  <div class="about-visual reveal reveal-delay-1">
+    <div class="about-img-frame">
+      <div class="about-illustration">
+        <svg viewBox="0 0 220 280" class="illus-building" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="80" width="200" height="180" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.3)" stroke-width="0.8"/>
+          <rect x="30" y="100" width="40" height="50" rx="1" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <rect x="90" y="100" width="40" height="50" rx="1" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <rect x="150" y="100" width="40" height="50" rx="1" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <rect x="30" y="170" width="40" height="50" rx="1" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <rect x="150" y="170" width="40" height="50" rx="1" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <rect x="83" y="195" width="54" height="65" rx="1" fill="rgba(255,255,255,0.03)" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+          <path d="M10 80 L110 20 L210 80" stroke="rgba(201,168,76,0.4)" stroke-width="0.8" fill="none"/>
+          <line x1="10" y1="260" x2="210" y2="260" stroke="rgba(201,168,76,0.2)" stroke-width="0.6"/>
+          <circle cx="110" cy="42" r="8" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="0.8"/>
+          <text x="110" y="47" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" fill="rgba(201,168,76,0.7)">B</text>
+          <text x="110" y="290" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="8" letter-spacing="4" fill="rgba(255,255,255,0.25)">BEACON ACADEMY</text>
+        </svg>
+      </div>
+    </div>
+    <div class="about-pattern"></div>
+    <div class="about-accent"></div>
+  </div>
+  <div class="about-content reveal reveal-delay-2">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">Four Decades of <em>Shaping Minds</em></h2>
+    <p class="about-body">Founded in 1985 in the heart of Karachi, Beacon Academy has been a pillar of educational excellence for over four decades. We believe every student carries within them the potential for greatness — our role is to illuminate that path.</p>
+    <p class="about-body" style="margin-top:16px;">From our state-of-the-art science labs to our sprawling sports grounds, every corner of our campus is designed to inspire curiosity, foster collaboration, and build the leaders of tomorrow.</p>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🎓</div>
+        <div class="pillar-name">Academic Rigor</div>
+        <div class="pillar-desc">O-Levels, Matric & A-Levels with distinction</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚽</div>
+        <div class="pillar-name">Sports Culture</div>
+        <div class="pillar-desc">City-level champions in cricket, football & more</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🎨</div>
+        <div class="pillar-name">Arts & Culture</div>
+        <div class="pillar-desc">Drama, music, calligraphy & visual arts</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">💡</div>
+        <div class="pillar-name">Innovation Hub</div>
+        <div class="pillar-desc">Digital labs, robotics & STEM programs</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="programs-inner">
+    <div class="programs-head reveal">
       <div>
-        <div class="hero-badge">📚 Admissions Open 2025–26</div>
-        <h1>Nurturing <em>Excellence,</em> Building <em>Future</em></h1>
-        <p class="hero-sub">From Montessori to Matric — AL Fareha Educational High School has shaped generations of confident, knowledgeable, and morally grounded students in Karachi since 2003.</p>
-        <div class="hero-btns">
-          <a href="#" class="btn-primary" onclick="showPage('admissions',null)">Apply for Admission</a>
-          <a href="#" class="btn-outline" onclick="showPage('about',null)">Learn About Us</a>
+        <div class="section-label">Academic Pathways</div>
+        <h2 class="section-title" style="color:var(--white)">Our <em style="color:var(--gold2)">Programs</em></h2>
+      </div>
+      <a href="#" class="programs-view-all">View All Programs →</a>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal reveal-delay-1">
+        <div class="program-num">01</div>
+        <div class="program-badge">Primary</div>
+        <h3 class="program-title">Foundation Years<br>Grades I – V</h3>
+        <p class="program-desc">Building the bedrock of curiosity, literacy and numeracy with playful, child-centred teaching that ignites a love for learning.</p>
+        <div class="program-footer">Bilingual · Urdu & English</div>
+      </div>
+      <div class="program-card reveal reveal-delay-2">
+        <div class="program-num">02</div>
+        <div class="program-badge">Middle</div>
+        <h3 class="program-title">Cambridge Lower<br>Secondary VI – VIII</h3>
+        <p class="program-desc">Transitioning to structured academic disciplines — sciences, humanities and mathematics — aligned to Cambridge standards.</p>
+        <div class="program-footer">Cambridge Affiliated</div>
+      </div>
+      <div class="program-card reveal reveal-delay-3">
+        <div class="program-num">03</div>
+        <div class="program-badge">Senior</div>
+        <h3 class="program-title">O-Levels &<br>Matric IX – X</h3>
+        <p class="program-desc">Dual-track senior programme — students choose between Cambridge O-Levels or Sindh Board Matric with full faculty support.</p>
+        <div class="program-footer">98% Pass Rate · City Toppers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-inner">
+    <div class="reveal">
+      <div class="section-label">Why Beacon</div>
+      <h2 class="section-title">What Sets Us <em>Apart</em></h2>
+    </div>
+    <div class="features-grid">
+      <div class="features-list">
+        <div class="feature-item reveal">
+          <div class="feature-num">01</div>
+          <div class="feature-content">
+            <div class="feature-title">Expert, Dedicated Faculty</div>
+            <div class="feature-text">Over 85 qualified teachers, many with masters degrees and 10+ years of experience. Regular professional development keeps our educators at the cutting edge.</div>
+          </div>
+          <div class="feature-arrow">→</div>
+        </div>
+        <div class="feature-item reveal reveal-delay-1">
+          <div class="feature-num">02</div>
+          <div class="feature-content">
+            <div class="feature-title">State-of-the-Art Facilities</div>
+            <div class="feature-text">Modern science labs, a 10,000-volume library, computer suites, a full-size cricket ground, and dedicated arts studios — all under one campus.</div>
+          </div>
+          <div class="feature-arrow">→</div>
+        </div>
+        <div class="feature-item reveal reveal-delay-2">
+          <div class="feature-num">03</div>
+          <div class="feature-content">
+            <div class="feature-title">Safe, Nurturing Environment</div>
+            <div class="feature-text">24/7 CCTV, trained security staff, a comprehensive anti-bullying policy, and a full-time counsellor ensure every child feels safe and heard.</div>
+          </div>
+          <div class="feature-arrow">→</div>
+        </div>
+        <div class="feature-item reveal reveal-delay-3">
+          <div class="feature-num">04</div>
+          <div class="feature-content">
+            <div class="feature-title">Regular Parent Communication</div>
+            <div class="feature-text">Monthly PTMs, a live online portal for results and attendance, and a dedicated WhatsApp group for each class — parents are always in the loop.</div>
+          </div>
+          <div class="feature-arrow">→</div>
+        </div>
+        <div class="feature-item reveal reveal-delay-4">
+          <div class="feature-num">05</div>
+          <div class="feature-content">
+            <div class="feature-title">Holistic Co-Curricular Life</div>
+            <div class="feature-text">Debate society, Model UN, annual mushaira, robotics club, and Karachi's most active school drama programme — students grow beyond textbooks.</div>
+          </div>
+          <div class="feature-arrow">→</div>
         </div>
       </div>
-      <div>
-        <div class="hero-card">
-          <h3>School at a Glance</h3>
-          <div class="stat-grid">
-            <div class="stat"><div class="stat-num">1200+</div><div class="stat-label">Students enrolled</div></div>
-            <div class="stat"><div class="stat-num">22</div><div class="stat-label">Years of excellence</div></div>
-            <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Matric pass rate</div></div>
-            <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Qualified teachers</div></div>
+      <div class="features-visual reveal reveal-delay-2">
+        <div class="features-card">
+          <div class="fc-dots">
+            <div class="fc-dot active"></div>
+            <div class="fc-dot"></div>
+            <div class="fc-dot"></div>
           </div>
-          <div class="hero-notice">
-            <p><strong>📢 Notice:</strong> Last date for admission forms is <strong>31st July 2025.</strong> Limited seats available in Class IX & X.</p>
+          <blockquote class="fc-quote" id="fc-quote">Beacon didn't just teach my daughter mathematics — it taught her to think, to question, and to lead. She topped the city in O-Levels.</blockquote>
+          <div class="fc-author">
+            <div class="fc-avatar" id="fc-avatar">FH</div>
+            <div class="fc-info">
+              <strong id="fc-name">Fatima Hasan</strong>
+              <span id="fc-role">Parent · Class X</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      <span>Annual Function — 15th August 2025</span>
-      <span>PTM scheduled for 20th July</span>
-      <span>Matric results — 98% pass rate 2024</span>
-      <span>Admissions Open for 2025-26</span>
-      <span>Science Fair — 5th September 2025</span>
-      <span>Sports Day — October 2025</span>
-      <span>Annual Function — 15th August 2025</span>
-      <span>PTM scheduled for 20th July</span>
-      <span>Matric results — 98% pass rate 2024</span>
-      <span>Admissions Open for 2025-26</span>
-      <span>Science Fair — 5th September 2025</span>
-      <span>Sports Day — October 2025</span>
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="gallery-inner">
+    <div class="reveal">
+      <div class="section-label">Campus Life</div>
+      <h2 class="section-title">Life at <em>Beacon</em></h2>
     </div>
   </div>
+  <div class="gallery-grid reveal">
+    <div class="g-item">
+      <div class="g-fill g-fill-1" style="height:100%"><div class="g-icon">🏫</div></div>
+      <div class="g-label">Main Academic Block</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g-fill-2" style="height:100%"><div class="g-icon">🔬</div></div>
+      <div class="g-label">Science Laboratories</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g-fill-3" style="height:100%"><div class="g-icon">🏏</div></div>
+      <div class="g-label">Sports Ground</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g-fill-4" style="height:100%"><div class="g-icon">📚</div></div>
+      <div class="g-label">Central Library</div>
+    </div>
+    <div class="g-item">
+      <div class="g-fill g-fill-5" style="height:100%"><div class="g-icon">🎭</div></div>
+      <div class="g-label">Performing Arts Hall</div>
+    </div>
+  </div>
+</section>
 
-  <!-- QUICK LINKS -->
-  <section style="padding:40px;">
-    <div class="section-inner">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
-        <div style="background:var(--green-pale);border:1px solid var(--border);border-radius:14px;padding:22px;cursor:pointer;" onclick="showPage('admissions',null)">
-          <div style="font-size:28px;margin-bottom:10px;">📋</div>
-          <h4 style="font-size:15px;font-weight:500;color:var(--green);margin-bottom:4px;">Admissions</h4>
-          <p style="font-size:12px;color:var(--text-muted);">Apply online, download form, check criteria</p>
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="reveal">
+      <div class="section-label">Community Voices</div>
+      <h2 class="section-title">What Families <em>Say</em></h2>
+    </div>
+    <div style="overflow:hidden; margin: 0 -60px; padding: 0 60px;">
+      <div class="testimonials-track" id="ttrack">
+        <div class="tcard">
+          <p class="tcard-text">"My son joined Beacon in Class I and left with distinctions in eight O-Level subjects. The teachers genuinely care — they know every child by name."</p>
+          <div class="tcard-person">
+            <div class="tcard-avatar av1">AK</div>
+            <div><div class="tcard-name">Ahmed Karimi</div><div class="tcard-role">Parent · DHA, Karachi</div></div>
+          </div>
         </div>
-        <div style="background:var(--gold-pale);border:1px solid #e8d090;border-radius:14px;padding:22px;cursor:pointer;" onclick="showPage('results',null)">
-          <div style="font-size:28px;margin-bottom:10px;">🏆</div>
-          <h4 style="font-size:15px;font-weight:500;color:#7a5a10;margin-bottom:4px;">Check Result</h4>
-          <p style="font-size:12px;color:var(--text-muted);">Enter roll number to see your result</p>
+        <div class="tcard">
+          <p class="tcard-text">"The annual sports day, the mushaira, the science fair — Beacon made my daughter's school years truly unforgettable. She asks to go to school even on Saturdays."</p>
+          <div class="tcard-person">
+            <div class="tcard-avatar av2">SN</div>
+            <div><div class="tcard-name">Sana Nawaz</div><div class="tcard-role">Parent · Clifton, Karachi</div></div>
+          </div>
         </div>
-        <div style="background:#e8f0fb;border:1px solid #b8cef0;border-radius:14px;padding:22px;cursor:pointer;" onclick="showPage('academics',null)">
-          <div style="font-size:28px;margin-bottom:10px;">📚</div>
-          <h4 style="font-size:15px;font-weight:500;color:#1a3c78;margin-bottom:4px;">Academics</h4>
-          <p style="font-size:12px;color:var(--text-muted);">Classes, subjects, curriculum overview</p>
+        <div class="tcard">
+          <p class="tcard-text">"As an alumnus and now a parent sending my own children here, I can say Beacon's values — discipline, curiosity, integrity — have stood the test of time."</p>
+          <div class="tcard-person">
+            <div class="tcard-avatar av3">OM</div>
+            <div><div class="tcard-name">Omar Malik</div><div class="tcard-role">Alumnus 2001 & Parent</div></div>
+          </div>
         </div>
-        <div style="background:#fae8f0;border:1px solid #e8b0cc;border-radius:14px;padding:22px;cursor:pointer;" onclick="showPage('contact',null)">
-          <div style="font-size:28px;margin-bottom:10px;">💬</div>
-          <h4 style="font-size:15px;font-weight:500;color:#7a1a48;margin-bottom:4px;">Contact Us</h4>
-          <p style="font-size:12px;color:var(--text-muted);">WhatsApp, call, or send a message</p>
+        <div class="tcard">
+          <p class="tcard-text">"The online portal and WhatsApp updates mean I always know my child's attendance, homework and results. Beacon truly partners with parents."</p>
+          <div class="tcard-person">
+            <div class="tcard-avatar av4">ZA</div>
+            <div><div class="tcard-name">Zara Ahmed</div><div class="tcard-role">Parent · Gulshan-e-Iqbal</div></div>
+          </div>
+        </div>
+        <div class="tcard">
+          <p class="tcard-text">"The debate team, the robotics club, the drama productions — my son discovered who he is at Beacon. Now he's at LUMS on a merit scholarship."</p>
+          <div class="tcard-person">
+            <div class="tcard-avatar av5">RQ</div>
+            <div><div class="tcard-name">Rizwan Qureshi</div><div class="tcard-role">Parent · PECHS, Karachi</div></div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+    <div class="testimonials-controls">
+      <button class="tc-btn" id="tprev">←</button>
+      <button class="tc-btn" id="tnext">→</button>
+    </div>
+  </div>
+</section>
 
-<!-- ABOUT PAGE -->
-<div id="page-about" class="page">
-  <section class="about-bg">
-    <div class="section-inner">
-      <p class="section-tag">Our Story</p>
-      <h2 class="section-title">About AL Fareha</h2>
-      <div class="about-grid">
+<!-- ADMISSIONS -->
+<section class="admissions" id="admissions">
+  <div class="admissions-inner">
+    <div class="reveal">
+      <div class="section-label">Enroll Today</div>
+      <h2 class="section-title">Begin Your Child's <em>Journey</em></h2>
+      <p class="adm-body">Admissions for the 2025-26 academic year are now open. Seats are limited — secure your child's place in Karachi's most sought-after institution.</p>
+      <div style="margin-top:40px; display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="#" class="btn-primary">Download Prospectus</a>
+        <a href="https://wa.me/92300000000" class="btn-secondary" style="color:rgba(255,255,255,0.6)">
+          <span class="arrow" style="border-color:rgba(255,255,255,0.15)">→</span>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="adm-steps reveal reveal-delay-2">
+      <div class="adm-step">
+        <div class="adm-step-num">1</div>
         <div>
-          <p class="section-sub">Founded in 2003, AL Fareha Educational High School has grown from a small community school to one of Karachi's most trusted institutions. We believe every child deserves quality education rooted in Islamic values and modern knowledge.</p>
-          <div class="about-features">
-            <div class="about-feature">
-              <div class="about-feature-icon">🕌</div>
-              <div class="about-feature-text"><h4>Islamic values at the core</h4><p>Morning assembly with Quran recitation, Islamic studies integrated into daily curriculum.</p></div>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature-icon">🎓</div>
-              <div class="about-feature-text"><h4>Sindh Board affiliated</h4><p>Registered with BSEK (Board of Secondary Education Karachi) for Matric examinations.</p></div>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature-icon">🌐</div>
-              <div class="about-feature-text"><h4>Bilingual medium</h4><p>English and Urdu medium streams available from Class I onwards.</p></div>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature-icon">🏫</div>
-              <div class="about-feature-text"><h4>Safe, disciplined environment</h4><p>CCTV monitored campus, authorised pickup system, and trained security staff.</p></div>
-            </div>
-          </div>
+          <div class="adm-step-title">Submit Application</div>
+          <div class="adm-step-desc">Fill the online form or visit our admissions office. Required: B-form, last report card, passport photos.</div>
         </div>
+      </div>
+      <div class="adm-step">
+        <div class="adm-step-num">2</div>
         <div>
-          <div class="principal-card">
-            <div class="principal-avatar">P</div>
-            <h4 style="font-size:16px;font-weight:500;color:var(--green);margin-bottom:4px;">Principal's Message</h4>
-            <blockquote>"At AL Fareha, we do not just teach subjects — we shape character. Our mission is to send out young people who are academically strong, morally grounded, and ready to serve their community and country."</blockquote>
-            <cite>— Mr. Farhan Ahmed, Principal</cite>
-          </div>
-          <div style="margin-top:16px;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:20px;">
-            <h4 style="font-size:14px;font-weight:500;color:var(--green);margin-bottom:12px;">Our Mission & Vision</h4>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:10px;"><strong style="color:var(--green);">Mission:</strong> To provide affordable, high-quality education that develops academic excellence, Islamic character, and civic responsibility in every student.</p>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.7;"><strong style="color:var(--green);">Vision:</strong> To be the most trusted school in Karachi, where every parent feels proud and every student feels empowered.</p>
-          </div>
+          <div class="adm-step-title">Entrance Assessment</div>
+          <div class="adm-step-desc">A friendly written test in English, Urdu, and Maths appropriate to the grade being applied for.</div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-<!-- ACADEMICS PAGE -->
-<div id="page-academics" class="page">
-  <section>
-    <div class="section-inner">
-      <p class="section-tag">Curriculum</p>
-      <h2 class="section-title">Academic Programmes</h2>
-      <p class="section-sub">We offer a structured, progressive education from Montessori through Matric, aligned with Sindh Board standards and enriched with co-curricular activities.</p>
-      <div class="academics-grid">
-        <div class="academic-card">
-          <span class="ac-level">Ages 3–5</span>
-          <h3>Montessori</h3>
-          <p>Play-based learning focused on fine motor skills, number recognition, Urdu & English alphabets, and social development.</p>
-          <div class="subject-tags"><span class="subject-tag">Colours & Shapes</span><span class="subject-tag">Phonics</span><span class="subject-tag">Urdu Qaida</span><span class="subject-tag">Drawing</span></div>
-        </div>
-        <div class="academic-card">
-          <span class="ac-level">Class I – V</span>
-          <h3>Primary School</h3>
-          <p>Strong foundation in core subjects. Separate Urdu and English medium streams. Weekly computer lab and library sessions.</p>
-          <div class="subject-tags"><span class="subject-tag">Maths</span><span class="subject-tag">Science</span><span class="subject-tag">English</span><span class="subject-tag">Urdu</span><span class="subject-tag">Islamiat</span></div>
-        </div>
-        <div class="academic-card">
-          <span class="ac-level">Class VI – VIII</span>
-          <h3>Middle School</h3>
-          <p>Subject specialisation begins. Lab practicals, project-based assessments, and introduction to elective options.</p>
-          <div class="subject-tags"><span class="subject-tag">General Science</span><span class="subject-tag">Social Studies</span><span class="subject-tag">Computer</span><span class="subject-tag">Arts</span></div>
-        </div>
-        <div class="academic-card">
-          <span class="ac-level">Class IX – X</span>
-          <h3>Matric (Science)</h3>
-          <p>BSEK registered. Biology, Chemistry, Physics with full practical work. Board exam preparation with past papers and mock tests.</p>
-          <div class="subject-tags"><span class="subject-tag">Physics</span><span class="subject-tag">Chemistry</span><span class="subject-tag">Biology</span><span class="subject-tag">Maths</span></div>
-        </div>
-        <div class="academic-card">
-          <span class="ac-level">Class IX – X</span>
-          <h3>Matric (Arts)</h3>
-          <p>Commerce, Economics, and Civics pathway. Ideal for students interested in business or social sciences.</p>
-          <div class="subject-tags"><span class="subject-tag">Economics</span><span class="subject-tag">Commerce</span><span class="subject-tag">Civics</span><span class="subject-tag">Urdu Adab</span></div>
-        </div>
-        <div class="academic-card">
-          <span class="ac-level">All Classes</span>
-          <h3>Co-Curricular</h3>
-          <p>Sports, debate competitions, science olympiad, art exhibitions, and annual function. Holistic development for every student.</p>
-          <div class="subject-tags"><span class="subject-tag">Sports</span><span class="subject-tag">Debate</span><span class="subject-tag">Science Fair</span><span class="subject-tag">Drama</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calendar -->
-  <section class="about-bg" style="padding-top:0;">
-    <div class="section-inner">
-      <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--green);margin-bottom:24px;">Academic Calendar 2025–26</h3>
-      <div class="cal-grid">
-        <div class="cal-card"><div class="cal-month">July 2025</div><div class="cal-events"><div class="cal-event"><span class="cal-date">Jul 1</span><p>New session begins</p></div><div class="cal-event"><span class="cal-date">Jul 20</span><p>Parent-Teacher Meeting</p></div><div class="cal-event"><span class="cal-date">Jul 31</span><p>Admission form deadline</p></div></div></div>
-        <div class="cal-card"><div class="cal-month">August 2025</div><div class="cal-events"><div class="cal-event"><span class="cal-date">Aug 14</span><p>Independence Day holiday</p></div><div class="cal-event"><span class="cal-date">Aug 15</span><p>Annual Function</p></div><div class="cal-event"><span class="cal-date">Aug 25</span><p>Unit Test I</p></div></div></div>
-        <div class="cal-card"><div class="cal-month">September 2025</div><div class="cal-events"><div class="cal-event"><span class="cal-date">Sep 5</span><p>Science & Math Olympiad</p></div><div class="cal-event"><span class="cal-date">Sep 20</span><p>Mid-term exams begin</p></div><div class="cal-event"><span class="cal-date">Sep 30</span><p>Mid-term result day</p></div></div></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ADMISSIONS PAGE -->
-<div id="page-admissions" class="page">
-  <section class="admissions-bg">
-    <div class="section-inner">
-      <p class="section-tag">Join Our School</p>
-      <h2 class="section-title">Admissions 2025–26</h2>
-      <p class="section-sub">We welcome students of all backgrounds. Follow these simple steps to secure your child's place at AL Fareha.</p>
-      <div class="admission-steps">
-        <div class="step"><div class="step-num">1</div><h4>Download Form</h4><p>Get the admission form from school office or download below.</p></div>
-        <div class="step"><div class="step-num">2</div><h4>Submit Documents</h4><p>B-form copy, 2 photos, previous result card, and school leaving certificate.</p></div>
-        <div class="step"><div class="step-num">3</div><h4>Entry Test</h4><p>Short written test in Maths and English. Dates announced after form submission.</p></div>
-        <div class="step"><div class="step-num">4</div><h4>Confirmation</h4><p>Result communicated via SMS. Fee payment to confirm seat within 5 days.</p></div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-        <div class="fee-table">
-          <table>
-            <tr><th>Class</th><th>Monthly Fee</th><th>Admission Fee</th></tr>
-            <tr><td>Montessori</td><td class="fee-amount">Rs. 2,500</td><td class="fee-amount">Rs. 5,000</td></tr>
-            <tr><td>Class I – III</td><td class="fee-amount">Rs. 3,000</td><td class="fee-amount">Rs. 6,000</td></tr>
-            <tr><td>Class IV – V</td><td class="fee-amount">Rs. 3,500</td><td class="fee-amount">Rs. 6,000</td></tr>
-            <tr><td>Class VI – VIII</td><td class="fee-amount">Rs. 4,200</td><td class="fee-amount">Rs. 7,000</td></tr>
-            <tr><td>Class IX – X</td><td class="fee-amount">Rs. 5,500</td><td class="fee-amount">Rs. 8,000</td></tr>
-            <tr><td colspan="3" style="font-size:11px;color:var(--text-muted);padding:10px 20px;">10% sibling discount · Transport fee separate</td></tr>
-          </table>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;">
-          <h4 style="font-family:'Playfair Display',serif;font-size:18px;color:var(--green);margin-bottom:16px;">Quick Enquiry</h4>
-          <div class="form-group"><label>Parent name</label><input type="text" placeholder="e.g. Ahmed Khan"/></div>
-          <div class="form-group"><label>Child's name</label><input type="text" placeholder="e.g. Sara Ahmed"/></div>
-          <div class="form-group"><label>Class applying for</label><select><option>Select class</option><option>Montessori</option><option>Class I</option><option>Class II</option><option>Class III</option><option>Class IV</option><option>Class V</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option></select></div>
-          <div class="form-group"><label>WhatsApp number</label><input type="text" placeholder="03XX-XXXXXXX"/></div>
-          <button class="form-submit" onclick="document.getElementById('enq-success').style.display='block'">Submit Enquiry</button>
-          <div id="enq-success" style="display:none;background:var(--green-pale);border:1px solid var(--green);border-radius:8px;padding:12px;font-size:13px;color:var(--green);text-align:center;margin-top:10px;">✅ Thank you! We will contact you on WhatsApp within 24 hours.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- FACULTY PAGE -->
-<div id="page-faculty" class="page">
-  <section>
-    <div class="section-inner">
-      <p class="section-tag">Our Team</p>
-      <h2 class="section-title">Meet Our Faculty</h2>
-      <p class="section-sub">Our teachers are qualified, experienced, and passionate about student success. Each brings deep subject expertise and genuine care for every child.</p>
-      <div class="faculty-grid">
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#1a5c38;">FA</div><h4>Mr. Farhan Ahmed</h4><p style="font-size:11px;color:var(--text-muted);">M.Sc Physics · 18 yrs exp.</p><span class="faculty-subject">Physics & Maths</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#5c3a1a;">SR</div><h4>Ms. Sana Raza</h4><p style="font-size:11px;color:var(--text-muted);">M.A English · 12 yrs exp.</p><span class="faculty-subject">English Language</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#1a3c5c;">AK</div><h4>Mr. Adnan Khan</h4><p style="font-size:11px;color:var(--text-muted);">M.Sc Chemistry · 15 yrs exp.</p><span class="faculty-subject">Chemistry</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#5c1a3a;">RB</div><h4>Ms. Rabia Bibi</h4><p style="font-size:11px;color:var(--text-muted);">M.Ed · 10 yrs exp.</p><span class="faculty-subject">Biology</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#3a5c1a;">ZH</div><h4>Mr. Zaid Hussain</h4><p style="font-size:11px;color:var(--text-muted);">B.Sc Maths · 8 yrs exp.</p><span class="faculty-subject">Mathematics</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#5c4a1a;">NQ</div><h4>Ms. Nadia Qureshi</h4><p style="font-size:11px;color:var(--text-muted);">M.A Urdu · 14 yrs exp.</p><span class="faculty-subject">Urdu & Islamiat</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#1a4c5c;">TM</div><h4>Mr. Tariq Mehmood</h4><p style="font-size:11px;color:var(--text-muted);">B.CS · 6 yrs exp.</p><span class="faculty-subject">Computer Science</span></div>
-        <div class="faculty-card"><div class="faculty-avatar" style="background:#5c1a1a;">SA</div><h4>Ms. Summaya Ali</h4><p style="font-size:11px;color:var(--text-muted);">Montessori Certified · 9 yrs</p><span class="faculty-subject">Montessori</span></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- RESULTS PAGE -->
-<div id="page-results" class="page">
-  <section style="background:var(--green);">
-    <div class="section-inner">
-      <p class="section-tag" style="color:var(--gold-light);">Hall of Fame</p>
-      <h2 class="section-title" style="color:#fff;">Board Toppers 2024</h2>
-      <p style="color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;margin-bottom:32px;">Our Matric 2024 students made us proud with outstanding results. Congratulations to all!</p>
-      <div class="toppers-grid">
-        <div class="topper-card"><div class="topper-rank rank-1">1</div><div class="topper-avatar">AM</div><div class="topper-name">Ayesha Malik</div><div class="topper-marks">1050 / 1100</div><div class="topper-class">Class X-A · Science</div></div>
-        <div class="topper-card"><div class="topper-rank rank-2">2</div><div class="topper-avatar">HK</div><div class="topper-name">Hamza Khan</div><div class="topper-marks">1038 / 1100</div><div class="topper-class">Class X-B · Science</div></div>
-        <div class="topper-card"><div class="topper-rank rank-3">3</div><div class="topper-avatar">ZA</div><div class="topper-name">Zara Ahmed</div><div class="topper-marks">1021 / 1100</div><div class="topper-class">Class X-A · Science</div></div>
-        <div class="topper-card"><div class="topper-rank rank-other">4</div><div class="topper-avatar">UR</div><div class="topper-name">Usman Raza</div><div class="topper-marks">1009 / 1100</div><div class="topper-class">Class X-C · Arts</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-inner">
-      <div class="result-checker">
-        <h3>Check Your Result</h3>
-        <p style="font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:20px;">Enter your roll number and class to view your internal exam result.</p>
-        <div class="form-group"><label>Roll Number</label><input type="text" id="roll-input" placeholder="e.g. 2024-001"/></div>
-        <div class="form-group"><label>Class</label><select id="class-input"><option>Select class</option><option>Class V</option><option>Class VIII</option><option>Class X</option></select></div>
-        <div class="form-group"><label>Exam</label><select id="exam-input"><option>Mid-term 2024</option><option>Annual 2024</option></select></div>
-        <button class="form-submit" onclick="checkResult()">Check Result</button>
-        <div class="result-output" id="result-output">
-          <div class="result-card-out">
-            <h4 id="res-name">Sara Ahmed — Class X-A</h4>
-            <div class="result-row"><span>Physics</span><span id="r1">88 / 100</span></div>
-            <div class="result-row"><span>Chemistry</span><span id="r2">91 / 100</span></div>
-            <div class="result-row"><span>Biology</span><span id="r3">85 / 100</span></div>
-            <div class="result-row"><span>Mathematics</span><span id="r4">94 / 100</span></div>
-            <div class="result-row"><span>English</span><span id="r5">82 / 100</span></div>
-            <div class="result-row"><span>Urdu</span><span id="r6">79 / 100</span></div>
-            <div class="result-total"><span>Total Marks</span><span id="r-total">519 / 600 — Grade A</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- GALLERY PAGE -->
-<div id="page-gallery" class="page">
-  <section>
-    <div class="section-inner">
-      <p class="section-tag">School Life</p>
-      <h2 class="section-title">Gallery</h2>
-      <p class="section-sub">Glimpses of the vibrant life at AL Fareha — sports, learning, celebrations, and achievements.</p>
-      <div class="gallery-grid">
-        <div class="gallery-item gi-1"><div class="gallery-placeholder"><div class="gallery-icon">🏫</div><p class="gallery-label">Annual Function 2024</p></div><div class="gallery-overlay">Annual Function</div></div>
-        <div class="gallery-item gi-2"><div class="gallery-placeholder"><div class="gallery-icon">🔬</div><p class="gallery-label">Science Fair</p></div><div class="gallery-overlay">Science Fair 2024</div></div>
-        <div class="gallery-item gi-3"><div class="gallery-placeholder"><div class="gallery-icon">⚽</div><p class="gallery-label">Sports Day</p></div><div class="gallery-overlay">Sports Day 2024</div></div>
-        <div class="gallery-item gi-4"><div class="gallery-placeholder"><div class="gallery-icon">🎨</div><p class="gallery-label">Art Exhibition</p></div><div class="gallery-overlay">Art Exhibition</div></div>
-        <div class="gallery-item gi-5"><div class="gallery-placeholder"><div class="gallery-icon">📚</div><p class="gallery-label">Classroom Activities</p></div><div class="gallery-overlay">Classroom Life</div></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- CONTACT PAGE -->
-<div id="page-contact" class="page">
-  <section class="contact-bg">
-    <div class="section-inner">
-      <p class="section-tag">Get In Touch</p>
-      <h2 class="section-title">Contact Us</h2>
-      <div class="contact-grid">
+      <div class="adm-step">
+        <div class="adm-step-num">3</div>
         <div>
-          <div class="contact-info">
-            <div class="contact-item"><div class="contact-item-icon">📍</div><div><h4>Address</h4><p>Plot B-12, Block 14, Gulshan-e-Iqbal,<br>Karachi, Sindh — 75300</p></div></div>
-            <div class="contact-item"><div class="contact-item-icon">📞</div><div><h4>Phone</h4><p>021-34801234<br>0312-1234567 (WhatsApp)</p></div></div>
-            <div class="contact-item"><div class="contact-item-icon">✉️</div><div><h4>Email</h4><p>info@alfarehaschool.edu.pk<br>admissions@alfarehaschool.edu.pk</p></div></div>
-            <div class="contact-item"><div class="contact-item-icon">🕐</div><div><h4>Office hours</h4><p>Monday – Saturday: 8:00 AM – 2:00 PM<br>Closed on Sundays & public holidays</p></div></div>
-          </div>
-          <div class="contact-map"><p style="font-size:13px;color:var(--text-muted);">📍 Google Map — Gulshan-e-Iqbal, Karachi</p></div>
+          <div class="adm-step-title">Parent Interview</div>
+          <div class="adm-step-desc">A 20-minute meeting with our Principal to align expectations and answer your questions.</div>
         </div>
-        <div class="contact-form">
-          <h3>Send a Message</h3>
-          <div class="form-group"><label>Your name</label><input type="text" placeholder="Full name"/></div>
-          <div class="form-group"><label>Phone / WhatsApp</label><input type="text" placeholder="03XX-XXXXXXX"/></div>
-          <div class="form-group"><label>Subject</label><select><option>Admission enquiry</option><option>Fee query</option><option>Result query</option><option>Transport</option><option>Complaint / feedback</option><option>Other</option></select></div>
-          <div class="form-group"><label>Message</label><textarea placeholder="Write your message here..."></textarea></div>
-          <button class="form-submit" onclick="document.getElementById('msg-success').style.display='block'">Send Message</button>
-          <div id="msg-success" style="display:none;background:var(--green-pale);border:1px solid var(--green);border-radius:8px;padding:12px;font-size:13px;color:var(--green);text-align:center;margin-top:10px;">✅ Message received! We will respond within 24 hours.</div>
+      </div>
+      <div class="adm-step">
+        <div class="adm-step-num">4</div>
+        <div>
+          <div class="adm-step-title">Confirm Enrollment</div>
+          <div class="adm-step-desc">Pay the registration fee, collect your welcome kit, and officially become part of the Beacon family.</div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <h3>AL Fareha Educational High School</h3>
-        <p>Providing quality education from Montessori to Matric since 2003. Rooted in Islamic values, committed to academic excellence.</p>
-        <div style="margin-top:14px;display:flex;gap:10px;">
-          <a href="#" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;">f</a>
-          <a href="#" style="width:32px;height:32px;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:14px;color:#25d366;">W</a>
+        <div class="logo">
+          <div class="logo-emblem">B</div>
+          <div class="logo-text">Beacon Academy
+            <span>Karachi · Est. 1985</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Nurturing minds, building character, and creating leaders who shape Pakistan's future.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" title="Facebook">f</a>
+          <a class="social-btn" href="#" title="Instagram">ig</a>
+          <a class="social-btn" href="#" title="YouTube">yt</a>
+          <a class="social-btn" href="#" title="Twitter">tw</a>
         </div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="#" onclick="showPage('about',null)">About us</a></li><li><a href="#" onclick="showPage('academics',null)">Academics</a></li><li><a href="#" onclick="showPage('admissions',null)">Admissions</a></li><li><a href="#" onclick="showPage('faculty',null)">Faculty</a></li></ul></div>
-      <div class="footer-col"><h4>Resources</h4><ul><li><a href="#" onclick="showPage('results',null)">Check result</a></li><li><a href="#" onclick="showPage('gallery',null)">Gallery</a></li><li><a href="#" onclick="showPage('academics',null)">Academic calendar</a></li><li><a href="#" onclick="showPage('admissions',null)">Fee structure</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="#">021-34801234</a></li><li><a href="#">0312-1234567</a></li><li><a href="#">Gulshan-e-Iqbal, Karachi</a></li><li><a href="#">info@alfarehaschool.edu.pk</a></li></ul></div>
+      <div class="footer-col">
+        <h4>School</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Faculty</a></li>
+          <li><a href="#">Academic Programs</a></li>
+          <li><a href="#">Co-Curricular</a></li>
+          <li><a href="#">Achievements</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Admissions</h4>
+        <ul>
+          <li><a href="#">Apply Online</a></li>
+          <li><a href="#">Fee Structure</a></li>
+          <li><a href="#">Criteria & Process</a></li>
+          <li><a href="#">Scholarships</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">Plot 42, Block 7, PECHS, Karachi</a></li>
+          <li><a href="tel:02135000000">021-3500-0000</a></li>
+          <li><a href="mailto:info@beaconacademy.edu.pk">info@beaconacademy.edu.pk</a></li>
+          <li><a href="#">Mon – Sat: 7:30 AM – 3:30 PM</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 AL Fareha Educational High School. All rights reserved.</p>
-      <p>BSEK Affiliated · Karachi, Pakistan</p>
+      <div class="footer-copy">© 2025 Beacon Academy, Karachi. All rights reserved.</div>
+      <a href="https://wa.me/92300000000" class="footer-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp Us
+      </a>
     </div>
   </div>
 </footer>
 
-<!-- WhatsApp floating button -->
-<a href="https://wa.me/923121234567" class="wa-btn" title="Chat on WhatsApp">💬</a>
-
 <script>
-function showPage(id, linkEl) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  if (linkEl) linkEl.classList.add('active');
-  window.scrollTo(0, 0);
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let cx = 0, cy = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  cx = e.clientX; cy = e.clientY;
+  cursor.style.left = cx + 'px';
+  cursor.style.top = cy + 'px';
+});
+function animRing() {
+  rx += (cx - rx) * 0.12;
+  ry += (cy - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('a, button, .program-card, .feature-item, .g-item, .tcard, .pillar').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.width = '20px'; cursor.style.height = '20px';
+    ring.style.width = '60px'; ring.style.height = '60px'; ring.style.opacity = '0.3';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.width = '12px'; cursor.style.height = '12px';
+    ring.style.width = '40px'; ring.style.height = '40px'; ring.style.opacity = '0.6';
+  });
+});
+
+// Loader
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    startCounters();
+  }, 2200);
+});
+
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// Number counters
+function startCounters() {
+  document.querySelectorAll('.counting').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const step = target / (2000 / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current).toLocaleString();
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  });
 }
 
-function checkResult() {
-  const roll = document.getElementById('roll-input').value.trim();
-  if (!roll) { alert('Please enter your roll number'); return; }
-  const names = ['Sara Ahmed — Class X-A','Hamza Khan — Class IX-B','Zara Ali — Class X-C'];
-  const scores = [[88,91,85,94,82,79],[76,80,72,88,70,75],[92,87,90,95,88,84]];
-  const idx = Math.floor(Math.random() * 3);
-  document.getElementById('res-name').textContent = names[idx];
-  const s = scores[idx];
-  document.getElementById('r1').textContent = s[0]+' / 100';
-  document.getElementById('r2').textContent = s[1]+' / 100';
-  document.getElementById('r3').textContent = s[2]+' / 100';
-  document.getElementById('r4').textContent = s[3]+' / 100';
-  document.getElementById('r5').textContent = s[4]+' / 100';
-  document.getElementById('r6').textContent = s[5]+' / 100';
-  const total = s.reduce((a,b)=>a+b,0);
-  const grade = total>=540?'A+':total>=480?'A':total>=420?'B':'C';
-  document.getElementById('r-total').textContent = total+' / 600 — Grade '+grade;
-  document.getElementById('result-output').classList.add('show');
+// Testimonials slider
+const track = document.getElementById('ttrack');
+let tIndex = 0;
+const cardW = 404;
+const maxIdx = 3;
+function slideTo(i) {
+  tIndex = Math.max(0, Math.min(i, maxIdx));
+  track.style.transform = `translateX(-${tIndex * cardW}px)`;
 }
+document.getElementById('tnext').addEventListener('click', () => slideTo(tIndex + 1));
+document.getElementById('tprev').addEventListener('click', () => slideTo(tIndex - 1));
+
+// Features card quote rotation
+const quotes = [
+  { text: "Beacon didn't just teach my daughter mathematics — it taught her to think, to question, and to lead. She topped the city in O-Levels.", name: "Fatima Hasan", role: "Parent · Class X", initials: "FH" },
+  { text: "The teachers here truly know each student. My son struggled with science in Class VI — by Class VIII he was winning inter-school competitions.", name: "Imran Sheikh", role: "Parent · Class VIII", initials: "IS" },
+  { text: "I am a Beacon alumnus, and I chose to send my children here without a second thought. The values this school instils are for life.", name: "Nadia Mirza", role: "Alumna 1998 & Parent", initials: "NM" },
+];
+let qIdx = 0;
+setInterval(() => {
+  qIdx = (qIdx + 1) % quotes.length;
+  const q = quotes[qIdx];
+  document.getElementById('fc-quote').textContent = q.text;
+  document.getElementById('fc-name').textContent = q.name;
+  document.getElementById('fc-role').textContent = q.role;
+  document.getElementById('fc-avatar').textContent = q.initials;
+  document.querySelectorAll('.fc-dot').forEach((d, i) => d.classList.toggle('active', i === qIdx));
+}, 4000);
 </script>
 </body>
 </html>
